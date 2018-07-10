@@ -62,7 +62,7 @@
 						<div style="line-height:28px"><xsl:call-template name="makeTopNavi"/></div>
 						<br/>
 						<div id="toc" style="text-align:center;width:100%;display:block;border:0px solid #c0c0c0;">
-							<span id="prev" class="nav"><a href="#" onclick="turnPage(-1);return false;" class="nav ui-link" title="1 Seite zurückblättern">&lt;=</a>&#160;S.</span>
+							<span id="prev" class="nav"><a href="#" onclick="turnPage(-1);return false;" class="nav ui-link" title="1 Seite zurückblättern">&lt;=</a>&#160;S.&#160;</span>
 							<span id="actu" class="nav">1</span>
 							<span id="next" class="nav">&#160;<a href="#" onclick="turnPage(1);return false;" class="nav ui-link" title="1 Seite weiterblättern">=&gt;</a></span>
 </div>
