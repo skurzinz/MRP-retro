@@ -5,15 +5,15 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 <!-- Common Parameters -->
-<xsl:param name="Text">#301010;</xsl:param>   <!-- Standard Textcolor --> 
-<xsl:param name="iText">#e0e4e4;</xsl:param>   <!-- Inverse Textcolor --> 
-<xsl:param name="menu">#606060;</xsl:param>   <!-- Menu Textcolor --> 
-<xsl:param name="title">#801010;</xsl:param>   <!--  Title color --> 
-<xsl:param name="navi">#183668;</xsl:param>   <!--  Topnavi color blue: 183668   brown: 603230 --> 
-<xsl:param name="media">#707080;</xsl:param>   <!--  Mediabox color --> 
+<xsl:param name="Text">#301010;</xsl:param>   <!-- Standard Textcolor -->
+<xsl:param name="iText">#e0e4e4;</xsl:param>   <!-- Inverse Textcolor -->
+<xsl:param name="menu">#606060;</xsl:param>   <!-- Menu Textcolor -->
+<xsl:param name="title">#801010;</xsl:param>   <!--  Title color -->
+<xsl:param name="navi">#183668;</xsl:param>   <!--  Topnavi color blue: 183668   brown: 603230 -->
+<xsl:param name="media">#707080;</xsl:param>   <!--  Mediabox color -->
 
 
-<!-- Define common URI prefix 
+<!-- Define common URI prefix
 <xsl:param name="uri-prefix">//www.austriaca.at/ministerrat/serie-1/</xsl:param>-->
 <xsl:param name="uri-prefix">/ministerrat/serie-1/</xsl:param>
 
@@ -32,7 +32,7 @@
 <head>
 	<xsl:call-template name="makeMetadata"/>
 	<xsl:call-template name="makeCSS"/>
-	<script src="/ministerrat/serie-1/_styles/host_min_serie1.js" type="text/javascript"></script>
+	<script src="http://hw.oeaw.ac.at/ministerrat/serie-1/_styles/host_min_serie1.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -43,18 +43,18 @@
 		<td> </td> <!-- spacer left -->
 		<td width="1120">
 			<!-- Header -->
-			<a href="/ministerrat">
-			<img src="/ministerrat/serie-1/_styles/logo10.jpg" alt="Logo"/><br />
+			<a href="http://hw.oeaw.ac.at/ministerrat">
+			<img src="http://hw.oeaw.ac.at/ministerrat/serie-1/_styles/logo10.jpg" alt="Logo"/><br />
 			</a>
 			<!-- Inner Table: Left-Menu - Content Area - Right Mediabox -->
 			<table border="0" width="100%" cellpadding="0" cellspacing="0">
 			<tr valign="top">
 				<td class="noprint" width="225"> <xsl:call-template name="makeMenu"/> </td>
 				<td width="15">   </td>
-				<td class="content" width="650"> 
+				<td class="content" width="650">
 					<xsl:call-template name="makeTopNavi"/>
 					<br/>
-					<xsl:call-template name="makeContent"/> 
+					<xsl:call-template name="makeContent"/>
 				</td>
 				<td width="20">   </td>
 				<td width="210" class="info">	<xsl:call-template name="makeMedia"/>	</td>
@@ -83,7 +83,7 @@
 				  ◄  zurück    
 			</a>
 		</span>
-		    
+		   
 		<a class="menu" target="_new" title="  Diese Sitzung als PDF-Dokument  ">
 			<xsl:attribute name="href">
 				<!-- pdf/<xsl:value-of select="MR/Sitzung/@id"/>.pdf<xsl:value-of select="MR/@url"/ -->
@@ -115,12 +115,12 @@
 						</td>
 					</tr>
 				</xsl:otherwise>
-			</xsl:choose>			
+			</xsl:choose>
 		</xsl:for-each>
 	</table>
 	<br /><br />
 	<a href="https://www.oeaw.ac.at/inz/" target="_new" title="Institut für Neuzeit - und Zeitgeschichteforschung">
-		<img src="/ministerrat/serie-1/_img/INZ_Logo2.jpg" border="0"/>
+		<img src="http://hw.oeaw.ac.at/ministerrat/serie-1/_img/INZ_Logo2.jpg" border="0"/>
 	</a>
 </div>
 </xsl:template>
@@ -136,11 +136,11 @@
 			<xsl:value-of select="Name/@formal"/>
 		</p>
 		<div style="margin-left:50px; font-size:12px">
-			<i><xsl:apply-templates select="Teilnehmer"/></i> 
+			<i><xsl:apply-templates select="Teilnehmer"/></i>
 			<br />
 			<!-- Topside Agenda Overview List -->
 			<xsl:for-each select="Agenda[@nr != '' ]">
-				<b><xsl:value-of select="@nr"/></b> <xsl:value-of select="@name"/>.  
+				<b><xsl:value-of select="@nr"/></b> <xsl:value-of select="@name"/>. 
 			</xsl:for-each>
 		</div>
 		<p>
@@ -162,7 +162,7 @@
 	<!-- autor ein/ausblenden -->
 	<!--<div align="right"><xsl:value-of select="//Autor"/></div>-->
 	<!--<b/><br />-->
-	
+
 	<!--  Footnotes -->
 	<!-- Enable Lines below to show footnotes at the end of document -->
 	<!-- xsl:if test="//p[@type = 'Fussnote']">
@@ -186,7 +186,7 @@
 			<xsl:apply-templates select="$book-index/Zitat"/>
 			Sitzung. Nr. <xsl:value-of select="substring-after(//Sitzung/@id, '-z')"/>, <!-- <br /> -->
 			URL: https://hw.oeaw.ac.at<xsl:value-of select="$uri-prefix"/><xsl:value-of select="//@id"/>/<xsl:text/>
-			<xsl:value-of select="//Sitzung/@id"/>.xml			
+			<xsl:value-of select="//Sitzung/@id"/>.xml
 		</xsl:if>
 	</div>
 	<!--<p>
@@ -197,16 +197,16 @@
 		<xsl:apply-templates select="//Publikation"/>
 	</p> -->
 	<p class="comment">
-	Lizenz: Open Access, Alle Rechte vorbehalten <!--<a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode.de" target="_blank">https://creativecommons.org/licenses/by-sa/4.0/legalcode.de</a>-->
+	Lizenz: <!--Open Access, Alle Rechte vorbehalten --><a href="https://creativecommons.org/licenses/by/4.0/deed.de" target="_blank">CC-BY-4.0</a>
 	</p>
 	<p>
-		<img src="/ministerrat/serie-1/_img/oeaw-logo.gif" alt="OEAW-Logo" align="left"/>
-		<br/>Verlag der Österreichischen Akademie der Wissenschaften <br />Austrian Academy of Sciences Press 
+		<img src="http://hw.oeaw.ac.at/ministerrat/serie-1/_img/oeaw-logo.gif" alt="OEAW-Logo" align="left"/>
+		<br/>Verlag der Österreichischen Akademie der Wissenschaften <br />Austrian Academy of Sciences Press
 	</p>
 	<p class="comment">
-	<a href="/ministerrat/impressum.htm" target="_blank">Impressum</a>
-	</p>	
-	
+	<a href="http://hw.oeaw.ac.at/ministerrat/impressum.htm" target="_blank">Impressum</a>
+	</p>
+
 </xsl:template>
 
 <!-- Make the Mediacollection -->
@@ -248,7 +248,7 @@
 	<!-- xsl:for-each select="//dfn">  •  <xsl:value-of select="."/></xsl:for-each -->
 	<xsl:for-each select="//bio">
 		<xsl:choose>
-			<xsl:when test="@Name"> 
+			<xsl:when test="@Name">
 				<span style="cursor:help;">
 					<xsl:attribute name="title"> <xsl:value-of select="text()"/> </xsl:attribute>
 					<xsl:value-of select="@Name"/>
@@ -256,7 +256,7 @@
 				</span> • 
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:value-of select="."/> •  
+				<xsl:value-of select="."/> • 
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:for-each>
@@ -432,20 +432,20 @@
 		<xsl:attribute name="content"><xsl:call-template name="makeMetaKeywords"/></xsl:attribute>
 	</meta>
 	<!-- Dublin-Core Metatags -->
-    <meta name="DC.Type" content="text"/> 
+    <meta name="DC.Type" content="text"/>
 	<meta name="DC.Title" content="Die Protokolle des österreichischen Ministerrates 1848-1867"/>
     <meta name="DC.Subject">
 		<xsl:attribute name="content"><xsl:call-template name="makeMetaKeywords"/></xsl:attribute>
     </meta>
 	<meta name="DC.Description" content="{//Kurzdefinition}"/>
-	<meta name="DC.Format" content="text/html"/> 
-	<meta name="DC.Identifier" content="https://hw.oeaw.ac.at/ministerrat"/> 
-	<meta name="DC.Language" content="de"/> 
-	<meta name="DC.Creator" content="Verlag der Österreichischen Akademie der Wissenschaften"/> 
-	<meta name="DC.Publisher" content="Verlag der Österreichischen Akademie der Wissenschaften"/> 
+	<meta name="DC.Format" content="text/html"/>
+	<meta name="DC.Identifier" content="https://hw.oeaw.ac.at/ministerrat"/>
+	<meta name="DC.Language" content="de"/>
+	<meta name="DC.Creator" content="Verlag der Österreichischen Akademie der Wissenschaften"/>
+	<meta name="DC.Publisher" content="Verlag der Österreichischen Akademie der Wissenschaften"/>
 	<meta name="DC.Rights" content="Österreichische Akademie der Wissenschaften"/>
-	<meta name="DC.Relation" content="Elektronische Publikation"/> 
-	<meta name="DC.Date" content="2019"/> 
+	<meta name="DC.Relation" content="Elektronische Publikation"/>
+	<meta name="DC.Date" content="2019"/>
 </xsl:template>
 
 <xsl:template name="makeCSS">
@@ -475,12 +475,12 @@ a:visited { color:#000090 }
 a:hover { color:darkRed; text-decoration:none; }
 a.menu:link { color:<xsl:value-of select="$menu"/> }
 a.menu:visited { color:<xsl:value-of select="$menu"/> }
-a.menu:hover { color:darkRed; text-decoration:none; } 
+a.menu:hover { color:darkRed; text-decoration:none; }
 a.action:link { color:<xsl:value-of select="$navi"/> }
 a.action:visited { color:<xsl:value-of select="$navi"/> }
-a.action:hover { color:darkRed; text-decoration:none; } 
+a.action:hover { color:darkRed; text-decoration:none; }
 .noprint { display:block; }
-@media print { .noprint { display:none } }	
+@media print { .noprint { display:none } }
 	</style>
 </xsl:template>
 
@@ -489,7 +489,7 @@ a.action:hover { color:darkRed; text-decoration:none; }
 <xsl:template name="makeTopNavi">
 <div style="margin-top:-0px">
 		<form name="fulltext" method="post" target="resultwindow" onsubmit="search('ministerrat_1', document.getElementsByName('search_entry')[0].value); return false;" style="margin-top: -4px">
-			<script src="/adoe/_styles/host.js" type="text/javascript"/>
+			<script src="http://hw.oeaw.ac.at/_style/SearchXmlPdf/host.js" type="text/javascript"/>
 			<table border="0" width="100%" cellpadding="0" cellspacing="0">
 				<tr>
 
@@ -504,7 +504,7 @@ a.action:hover { color:darkRed; text-decoration:none; }
 					<td>  </td>
 					<td class="button"><a class="action" href="javascript: pagePrint();">  Druck  </a></td>
 					<td>  </td>
-					<td class="button"><a class="action" href="/ministerrat/serie-1/_styles/hilfe.htm" target="_blank">  Hilfe  </a></td>
+					<td class="button"><a class="action" href="http://hw.oeaw.ac.at/ministerrat/serie-1/_styles/hilfe.htm" target="_blank">  Hilfe  </a></td>
 				</tr>
 			</table>
 		</form>
@@ -514,14 +514,14 @@ a.action:hover { color:darkRed; text-decoration:none; }
 	<tr>
 		<td  class="button">
 			<input type="hidden" name="searching" value="simple"/>
-			<input size="40"  name="search_entry" value="Suchbegriff" onfocus="this.select();" onmouseup="return false;" 
+			<input size="40"  name="search_entry" value="Suchbegriff" onfocus="this.select();" onmouseup="return false;"
 					style="font-size:13px; height:18px; border:solid 0px #c8c8c8; "/>
 		</td>
 		<td>  </td>
 		<td class="button"><a class="action" href="javascript: search(document.getElementsByName('search_entry')[0].value)">  Suche  </a></td>
 		<td>  </td>
 		<td class="button"><a class="action" href="javascript: extendedSearch();">  Erweiterte Suche  </a></td>
-		<td>  </td> 
+		<td>  </td>
 		<td class="button"><a class="action" href="javascript: pagePrint();">  Ausdruck  </a></td>
 		<td>  </td>
 		<td class="button"><a class="action" href="https://hw.oeaw.ac.at/ministerrat/serie-1/_styles/hilfe.htm" target="_blank">  Hilfe  </a></td>
